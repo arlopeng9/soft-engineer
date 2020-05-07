@@ -11,7 +11,7 @@ public interface UserMapper {
      * @param id
      * @return
      */
-    public User queryUserById(String id);
+    public User queryUser(User user);
 
     /**
      * 查询所有用户信息
