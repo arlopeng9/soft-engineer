@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Course_Manage@localhost" uuid="819541b9-ae51-4968-ab45-b16d8d8befc0">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/Course_Manage</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="History" uuid="98764d54-7e7e-4435-b2e0-dc1ed40d862e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\pyj\Desktop\History1.db</jdbc-url>
+    </data-source>
+  </component>
+</project>

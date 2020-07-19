@@ -1,86 +1,107 @@
 package com.course_manage.entity;
 
 public class Course {
-        private int id;
+    private Integer id = -1;
 
-        private String name;
+    private String name;
 
-        private String context;
+    private String context;
 
-        private String type;
+    private String type;
 
-        private String price;
+    private String teacher;
 
-        private String label;
+    private String label;
 
-        private String hour;
+    private String people;
 
-        public int getId() {
-            return id;
-        }
+    private String picture;
 
-        public void setId(int id) {
-            this.id = id ;
-        }
+    private  String grade;
 
-        public String getName() {
-            return name;
-        }
+    private  String school;
 
-        public void setName(String name) {
-            this.name = name == null ? null : name.trim();
-        }
+    public Integer getId() {
+        return id;
+    }
 
-        public String getContext() {
-            return context;
-        }
+    public void setId(int id) {
+        this.id = id ;
+    }
 
-        public void setContext(String context) {
-            this.context = context == null ? null : context.trim();
-        }
+    public String getName() {
+        return name;
+    }
 
-        public String getType() {
-            return type;
-        }
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
 
-        public void setType(String type) {
-            this.type = type == null ? null : type.trim();
-        }
+    public String getContext() {
+        return context;
+    }
 
-        public String getPrice() {
-            return price;
-        }
+    public void setContext(String context) {
+        this.context = context == null ? null : context.trim();
+    }
 
-        public void setPrice(String price) {
-            this.price = price == null ? null : price.trim();
-        }
+    public String getType() {
+        return type;
+    }
 
-        public String getLabel() {
-            return label;
-        }
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
+    }
 
-        public void setLabel(String label) {
-            this.label = label == null ? null : label.trim();
-        }
 
-        public String getHour() {
-            return hour;
-        }
 
-        public void setHour(String hour) {
-            this.hour = hour == null ? null : hour.trim();
-        }
-        @Override
-        public String toString() {
-            return "Course{" +
-                    "id='" + id + '\'' +
-                    ", name='" + name + '\'' +
-                    ", context='" + context + '\'' +
-                    ", type='" + type + '\'' +
-                    ", price='" + price + '\'' +
-                    ", label='" + label + '\'' +
-                    ", hour='" + label + '\'' +
-                    '}';
-        }
+    public String getLabel() {
+        return label;
+    }
 
+    public void setLabel(String label) {
+        this.label = label == null ? null : label.trim();
+    }
+
+
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public String getPeople() {
+        return people;
+    }
+
+    public void setPeople(String people) {
+        this.people = people;
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course_manage.Mappers.HistoryMapper">
+    <select id="select" resultType="com.course_manage.entity.History">
+        select * from history;
+    </select>
+    <select id="selecttime" parameterType="com.course_manage.entity.History" resultType="com.course_manage.entity.History">
+        select time from history where userId = #{userId} and courseId = #{courseId} and day = #{day};
+    </select>
+    <insert id="insert" parameterType="com.course_manage.entity.History">
+        insert into history(
+        courseId,
+        userId,
+        day,
+        time
+        )
+        VALUES
+        (
+        #{courseId},
+        #{userId},
+        #{day},
+        #{time}
+        );
+    </insert>
+    <update id="update" parameterType="com.course_manage.entity.History">
+        UPDATE history
+        set
+        time = #{time}
+        where userId = #{userId} and courseId = #{courseId} and day = #{day};
+    </update>
+    <delete id="deleteByPrimaryId" parameterType="com.course_manage.entity.History">
+        delete  from history where userId = #{userId} and courseId = #{courseId} and day = #{day};
+    </delete>
+</mapper>

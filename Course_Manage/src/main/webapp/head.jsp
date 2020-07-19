@@ -8,116 +8,187 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html class="no-js" lang="zxx">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="style/css/amazeui.min.css">
-    <link rel="stylesheet" href="style/css/course.css">
-    <link rel="stylesheet" href="style/css/admin.css">
-    <link rel="stylesheet" href="style/css/login.css">
-    <script src="style/js/login.js"></script>
-    <script src="style/js/loginandregist.js"></script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <script src="style/js/jquery-3.2.1.min.js"></script> -->
     <script src="style/js/amazeui.min.js"></script>
-    <link rel="stylesheet" href="style/css/bootstrap.min.css">
     <script src="style/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style/css/course.css">
+    	<!-- Stylesheets -->
+
+    <link rel="stylesheet" href="style/css/plugins/bootstrap.min.css">
+	<link rel="stylesheet" href="style/css/plugins.css">
+	<link rel="stylesheet" href="style/css/style.css">
+
+	<!-- Cusom css -->
+   <link rel="stylesheet" href="style/css/custom.css">
+
+	<!-- Modernizer js -->
+	<script src="style/js/modernizr-3.5.0.min.js"></script>
+	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> 
+
 </head>
 <body>
-<div id="dengluinput"
-     style="position: fixed; background: rgb(255, 255, 255) none repeat scroll 0% 0%; z-index: 100000; width: 360px; left: 50%; top: 50%; margin: -218px 0px 0px -180px; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25); display: none;">
+    <!-- Header -->
+    <header id="wn__header" class="header__area header__absolute sticky__header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <div class="logo">
+                        <a href="index.do">
+                            <img src="images/logo/logo.png" alt="logo images">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-lg-block">
+                    <nav class="mainmenu__nav">
+                        <ul class="meninmenu d-flex justify-content-start">
+                            <li><a href="index.jsp">首页</a></li>
+                            <li><a href="course_list.jsp">课程列表</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+                        <li class="shop_search"><a class="search__active" href="#"></a></li>
+                        
+                        <c:if test="${loginUser != null }">
+                        <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+                            <!-- Start 我的课程 -->
+                            <div class="block-minicart minicart__active">
+                                <div class="minicart-content-wrapper">
+                                    <div class="micart__close">
+                                        <span>close</span>
+                                    </div>
 
-    <div
-            style="font-size: 16px; line-height: 49px; height: 49px; color: #787d82; border-bottom: 1px solid #d0d6d9;">
-
-			<span id="denglu" onclick="denglu()"
-                  style="border-bottom: 1px solid #f01400; color: #f01400; float: left; width: 80px; text-align: center; height: 49px; line-height: 49px; cursor: pointer; padding: 0 20px;">登录</span>
-
-        <span id="zhuce" onclick="zhuce()"
-              style="border-bottom: 1px solid #d0d6d9; color: #f01400; float: left; width: 80px; text-align: center; height: 49px; line-height: 49px; cursor: pointer; padding: 0 20px;">注册</span>
-
-        <span style="float: right; cursor: pointer; padding-right: 20px"
-              onclick="guanbi()"> X </span>
-
-    </div>
-    <div style="padding: 30px 30px;">
-        <form id="form1" action="login.do" method="post">
-            <label for="username">用户名</label> <input class="denglu-input"
-                                                     id="username" type="text" name="username"><br>
-            <label
-                for="password">密码</label> <input class="denglu-input" id="password"
-                                                 type="password" name="password"><br>
-            <label
-                id="labelrpw" for="rpassword"><br></label> <br />
-            <label
-                    for="varcode">验证码</label> <br><input class="denglu-input" id="varcode"
-                                                         type="text" name="varcode" style="width: 100px;">&nbsp;&nbsp;&nbsp;&nbsp;<img onclick="changevarcode()" id="varcodeimg" alt="验证码" src="changevarcode.do"> <br>
-            <span id="tishi"></span><br>
+                                    <div class="single__items">
+                                        <div class="miniproduct">
+                                            <div class="item01 d-flex">
+                                                <div class="thumb">
+                                                    <a href="single-product.html"><img src="images/product/sm-img/1.jpg" alt="product images"></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h6><a href="single-product.html">Voyage Yoga Bag</a></h6>
+                                                    <span class="prize">$30.00</span>
+                                                    <div class="product_prize d-flex justify-content-between">
+                                                        <span class="qun">Qty: 01</span>
+                                                        <ul class="d-flex justify-content-end">
+                                                            <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
+                                                            <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item01 d-flex mt--20">
+                                                <div class="thumb">
+                                                    <a href="single-product.html"><img src="images/product/sm-img/3.jpg" alt="product images"></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h6><a href="single-product.html">Impulse Duffle</a></h6>
+                                                    <span class="prize">$40.00</span>
+                                                    <div class="product_prize d-flex justify-content-between">
+                                                        <span class="qun">Qty: 03</span>
+                                                        <ul class="d-flex justify-content-end">
+                                                            <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
+                                                            <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item01 d-flex mt--20">
+                                                <div class="thumb">
+                                                    <a href="single-product.html"><img src="images/product/sm-img/2.jpg" alt="product images"></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h6><a href="single-product.html">Compete Track Tote</a></h6>
+                                                    <span class="prize">$40.00</span>
+                                                    <div class="product_prize d-flex justify-content-between">
+                                                        <span class="qun">Qty: 03</span>
+                                                        <ul class="d-flex justify-content-end">
+                                                            <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
+                                                            <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mini_action cart">
+                                        <a class="cart__btn" href="">查看我的课程</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End 我的课程 -->
+                        </li>
+                        </c:if>
+                        <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+                            <div class="searchbar__content setting__block">
+                                <div class="content-inner">
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>My Account</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <div class="setting__menu">
+                                                    <c:if test="${loginUser != null }">
+                                                    <span><a href="learncourse.do">我的学习 </a></span>
+                                                    <span>[${loginUser.username }]</span>
+                                                    <span><a href="logout.do">登出</a></span>
+                                                    </c:if>
+                                                    <c:if test="${loginUser == null }">
+                                                    <span><a href="login.do">登陆</a></span>
+                                                    <span><a href="regist.do">注册</a></span>
+                                                    </c:if>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Start Mobile Menu -->
+            <div class="row d-none">
+                <div class="col-lg-12 d-none">
+                    <nav class="mobilemenu__nav">
+                        <ul class="meninmenu">
+                            <li><a href="index.jsp">首页</a></li>
+                            <li><a href="course_list.jsp">课程列表</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- End Mobile Menu -->
+            <div class="mobile-menu d-block d-lg-none">
+            </div>
+            <!-- Mobile Menu -->	
+        </div>		
+    </header>
+    <!-- //Header -->
+    <!-- Start Search Popup -->
+    <div class="brown--color box-search-content search_active block-bg close__top">
+        <form id="search_mini_form" class="minisearch" action="#">
+            <div class="field__search">
+                <input type="text" placeholder="Search entire store here...">
+                <div class="action">
+                    <a href="querycourse.do?"><i class="zmdi zmdi-search"></i></a>
+                </div>
+            </div>
         </form>
-        <button id="tijiao" onclick="quickpasswordchat()" type="button"
-                style="color: #fff; margin-top: 20px; border-color: #c20a0a; width: 90%; height: 50px; background: #c20a0a;">登录</button>
-
-    </div>
-</div>
-
-<nav class="navbar navbar-default navbar-inverse navbar-fixed-top"
-     role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> <span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span
-                    class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="course.do">上课吧 </a>
-        </div>
-
-        <div class="collapse navbar-collapse"
-             id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a
-                        href="${pageContext.request.contextPath }/index.do">首页</a></li>
-                <li><a href="showvip.do">会员中心</a></li>
-            </ul>
-            <form class="navbar-form navbar-left" action="coursesearch.do"
-                  method="post">
-
-                <input type="text" name="search" class="form-control"
-                       placeholder="课程">
-                <button type="submit" class="btn">查找</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <c:if test="${loginUser != null }">
-                    <li><a href="mylearn.do">我的学习 </a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle"
-                                            data-toggle="dropdown"><c:if
-                            test="${loginUser.nickname !=null}">
-                        [${loginUser.nickname }]
-                    </c:if>
-                        <c:if test="${loginUser.nickname ==null}">
-                            [${loginUser.username }]
-                        </c:if><strong class="caret"></strong></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="infoset.jsp" class="glyphicon glyphicon-inbox">个人设置</a></li>
-                            <li><a href="logout.do" class="glyphicon glyphicon-inbox">
-                                退出帐号</a></li>
-
-                        </ul></li>
-
-
-                </c:if>
-                <c:if test="${loginUser == null }">
-                    <li><a href="#" onclick="showdenglu()"><span
-                            class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-                    <li><a href="#" onclick="showdenglu()"><span
-                            class="glyphicon glyphicon-user"></span> 注册 </a></li>
-                    <li><a href="#">关于 </a></li>
-                </c:if>
-
-            </ul>
+        <div class="close__wrap">
+            <span>close</span>
         </div>
     </div>
-</nav>
+    <!-- End Search Popup -->
+    <!-- Start Slider area -->
 </body>
-</html>
+</html> 

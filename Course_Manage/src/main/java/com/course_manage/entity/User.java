@@ -1,7 +1,7 @@
 package com.course_manage.entity;
 
 public class User {
-        private Integer id;
+        private Integer id = -1;
         private String username;
         private String password;
         private String email;

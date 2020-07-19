@@ -1,0 +1,105 @@
+{
+   "result":true,
+   "code":0,
+   "messge":"success",
+   "data":
+   {
+      "xAxis":
+      [
+         "200527",
+         "200528",
+         "200529",
+         "200530",
+         "200531",
+         "200601",
+         "200602"
+      ],
+      "series":
+      [
+         {
+            "stack":"总量",
+            "data":
+            [
+               555,
+               125,
+               445,
+               0,
+               0,
+               0,
+               0
+            ],
+            "name":"微积分基础",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         },
+         {
+            "stack":"总量",
+            "data":
+            [
+               360,
+               215,
+               180,
+               0,
+               0,
+               0,
+               0
+            ],
+            "name":"模拟电子技术",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         },
+         {
+            "stack":"总量",
+            "data":
+            [
+               480,
+               0,
+               300,
+               0,
+               0,
+               0,
+               0
+            ],
+            "name":"供配电技术",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         }
+
+      ]
+
+   }
+
+}

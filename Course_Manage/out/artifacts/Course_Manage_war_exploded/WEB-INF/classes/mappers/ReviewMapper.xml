@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course_manage.Mappers.ReviewMapper">
+    <select id="select" resultType="com.course_manage.entity.Review">
+        select * from review;
+    </select>
+    <select id="selectById" resultType="com.course_manage.entity.Review">
+        select * from review where id = #{id};
+    </select>
+    <select id="selectByCourseId" resultType="com.course_manage.entity.Review">
+        select * from review where courseId = #{courseId};
+    </select>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.course_manage.entity.Review">
+        INSERT INTO review(
+        courseId,
+        courseName,
+        username,
+        review,
+        date,
+        evaluate
+        )
+        VALUES
+        (
+        #{courseId},
+        #{courseName},
+        #{userName},
+        #{review},
+        current_time(),
+        #{evaluate}
+        );
+    </insert>
+
+    <update id="update" parameterType="com.course_manage.entity.Review">
+        UPDATE review
+        set
+        <if test="courseId!=null">courseId = #{courseId},
+        <if test="courseName!=null">courseName = #{courseName},</if></if>
+        <if test="username!=null">username = #{userName},</if>
+        <if test="review!=null">review = #{review},</if>
+        <if test="date!=null">date = current_time(),</if>
+        <if test="evaluate!=null">evaluate = #{evaluate}</if>
+        WHERE id = #{id} ;
+    </update>
+
+    <update id="updatecoursename" parameterType="com.course_manage.entity.Review">
+        UPDATE review
+        set
+        courseName = #{courseName}
+        WHERE id = #{id} ;
+    </update>
+
+    <delete id="deleteByPrimaryId">
+        delete  from review where id = #{id};
+    </delete>
+</mapper>

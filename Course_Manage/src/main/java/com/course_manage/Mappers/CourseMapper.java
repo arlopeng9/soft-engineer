@@ -5,39 +5,27 @@ import com.course_manage.entity.Course;
 import java.util.List;
 
 public interface CourseMapper {
-    /**
-     * 根据id查询课程信息
-     *
-     * @param id
-     * @return
-     */
-    public Course queryCourseById(String id);
+    public Course queryCourseById(int id);
 
-    /**
-     * 查询所有课程信息
-     *
-     * @return
-     */
+    public List<Course> queryCourseByName(String name);
+
+    public List<Course> queryCourseByTag(Course course);
+
+    public List<Course> queryCourseByType(String type);
+
+    public List<Course> queryCourseByGrade(String grade);
+
+    public List<Course> queryCourseBySchool(String school);
+
+    public List<Course> queryCourseBySearch(String search);
+
+    public List<Course> queryfavourate();
+    public Course selectlastcourse();
     public List<Course> queryCourseAll();
 
-    /**
-     * 新增课程
-     *
-     * @param course
-     */
-    public void insertCourse(Course course);
+    public int insertCourse(Course course);
 
-    /**
-     * 更新课程信息
-     *
-     * @param course
-     */
-    public void updateCourse(Course course);
+    public int updateCourse(Course course);
 
-    /**
-     * 根据id删除课程信息
-     *
-     * @param id
-     */
-    public void deleteCourse(String id);
+    public int deleteCourse(int courseid);
 }

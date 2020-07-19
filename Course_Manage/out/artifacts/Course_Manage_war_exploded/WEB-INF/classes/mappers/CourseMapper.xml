@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course_manage.Mappers.CourseMapper">
+
+    <select id="selectlastcourse" resultType="com.course_manage.entity.Course">
+        SELECT * from course ORDER BY id desc LIMIT 0,1
+    </select>
+    <select id="queryCourseById" resultType="com.course_manage.entity.Course">
+        select * from course where id = #{id};
+    </select>
+    <select id="queryCourseByName"  resultType="com.course_manage.entity.Course">
+        select * from course where name = #{name};
+    </select>
+    <select id="queryCourseByType"  resultType="com.course_manage.entity.Course">
+        select * from course where type = #{type};
+    </select>
+    <select id="queryCourseByGrade" resultType="com.course_manage.entity.Course">
+        select * from course where grade = #{grade};
+    </select>
+    <select id="queryCourseBySchool" resultType="com.course_manage.entity.Course">
+        select * from course where school = #{school};
+    </select>
+    <select id="queryCourseByTag" parameterType="com.course_manage.entity.Course" resultType="com.course_manage.entity.Course">
+        select * from course where type = #{type} and name like concat('%',#{name},'%');
+    </select>
+    <select id="queryfavourate" resultType="com.course_manage.entity.Course">
+        select * from course where cast(people as unsigned) >= 5000;
+    </select>
+    <select id="queryCourseBySearch" parameterType="String" resultType="com.course_manage.entity.Course">
+        select *
+    from course where name like concat('%',#{search},'%');
+    </select>
+
+    <select id="queryCourseAll" resultType="com.course_manage.entity.Course">
+        select  * from course;
+    </select>
+
+    <insert id="insertCourse" parameterType="com.course_manage.entity.Course">
+        INSERT INTO course(
+        id,
+        name,
+        context,
+        type,
+        teacher,
+        label,
+        people,
+        picture,
+        grade,
+        school
+        )
+        VALUES (
+        #{id},
+        #{name},
+        #{context},
+        #{type},
+        #{teacher},
+        #{label},
+        #{people},
+        #{picture},
+        #{grade},
+        #{school}
+        );
+
+    </insert>
+
+    <update id="updateCourse" parameterType="com.course_manage.entity.Course">
+        UPDATE course
+        set
+        <if test="name!=null">name = #{name},</if>
+        <if test="context!=null">context = #{context},</if>
+        <if test="type!=null">type = #{type},</if>
+        <if test="teacher!=null">teacher = #{teacher},</if>
+        <if test="label!=null">label = #{label},</if>
+        <if test="people!=null">people = #{people},</if>
+        <if test="picture!=null">picture = #{picture},</if>
+        <if test="grade!=null">grade = #{grade },</if>
+        <if test="school!=null">school = #{school }</if>
+        WHERE id = #{id} ;
+    </update>
+
+    <delete id="deleteCourse" >
+        delete from course where id=#{id};
+    </delete>
+</mapper>

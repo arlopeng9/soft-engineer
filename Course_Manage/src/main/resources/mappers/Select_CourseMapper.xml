@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course_manage.Mappers.Select_CourseMapper">
+    <select id="select" resultType="com.course_manage.entity.Select_Course">
+        select * from select_course;
+    </select>
+    <select id="selectByuserId" resultType="Integer">
+        select courseId from select_course where userId = #{userId};
+    </select>
+    <select id="selectByUserId" resultType="com.course_manage.entity.Select_Course">
+        select * from select_course where userId = #{userId};
+    </select>
+    <select id="selectBycourseId" resultType="com.course_manage.entity.Select_Course">
+        select * from select_course where courseId = #{courseId};
+    </select>
+    <select id="selectByPrimaryId" parameterType="com.course_manage.entity.Select_Course" resultType="String">
+        select courseName from select_course where userId = #{userId} and  courseId = #{courseId};
+    </select>
+    <insert id="insert" parameterType="com.course_manage.entity.Select_Course">
+        insert into select_course(
+        courseId,
+        courseName,
+        userId,
+        userName
+        )
+        VALUES
+        (
+        #{courseId},
+        #{courseName},
+        #{userId},
+        #{userName}
+        );
+    </insert>
+    <delete id="deleteByPrimaryId" parameterType="com.course_manage.entity.Select_Course">
+        delete  from select_course where userId = #{userId} and courseId = #{courseId};
+    </delete>
+</mapper>

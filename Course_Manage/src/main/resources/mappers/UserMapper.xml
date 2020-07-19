@@ -11,6 +11,9 @@
     <select id="queryUser" parameterType="com.course_manage.entity.User" resultType="com.course_manage.entity.User">
       select * from user where username=#{username} and password =#{password};
    </select>
+    <select id="queryUserById"  resultType="com.course_manage.entity.User">
+      select * from user where id=#{id};
+   </select>
 
     <select id="queryUserAll" resultType="com.course_manage.entity.User">
         select * from user ;

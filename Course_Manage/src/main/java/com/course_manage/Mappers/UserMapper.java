@@ -12,6 +12,7 @@ public interface UserMapper {
      * @return
      */
     public User queryUser(User user);
+    public User queryUserById(int id);
 
     /**
      * 查询所有用户信息
@@ -25,19 +26,19 @@ public interface UserMapper {
      *
      * @param user
      */
-    public void insertUser(User user);
+    public  int insertUser(User user);
 
     /**
      * 更新用户信息
      *
      * @param user
      */
-    public void updateUser(User user);
+    public int updateUser(User user);
 
     /**
      * 根据id删除用户信息
      *
      * @param id
      */
-    public void deleteUser(String id);
+    public int deleteUser(int id);
 }

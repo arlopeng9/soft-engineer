@@ -10,10 +10,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html >
 <head>
-    <title>mooc登录</title>
+    <title>登录</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="style/js/loginkuang.js"></script>
     <link rel="stylesheet" href="style/css/course.css">
     <link  rel="stylesheet" href="style/css/bootstrap.min.css">
     <script src="style/js/jquery.min.js"></script>
@@ -43,7 +42,7 @@
 
 
             <div class="container-fluid full ">
-                <form id="login1" action="login.do" method="post"
+                <form id="loginform"  method="post"
                       class="form col-md-4 col-md-offset-4 ">
                     <label for="username" class="col-md-3 control-label">用户名</label>
                     <div class="form-group" >
@@ -77,7 +76,9 @@
 
                     <div class="form-group">
                         <button id="submit1" class="btn btn-primary btn-lg btn-block"
-                                type="button" onclick="login()">立刻登录</button>
+                                type="button" onclick="login()">立刻登陆</button>
+                        <button id="submit2" class="btn btn-primary btn-lg btn-block"
+                                type="button" onclick="adminlogin()">管理员登陆</button>
                     </div>
                 </form>
             </div>
@@ -145,11 +146,63 @@
                         isok = false;
                         return;
                     } else {
-                        $("#login1").submit();
+                        document.forms[0].action = "login.do";
+                        document.forms[0].submit();
+
                     }
                 }
             });
     }
+
+function adminlogin() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var varcode = $("#varcode").val();
+    var isok = true;
+    /* 判断用户名密码是否为空 */
+    if (username == "") {
+        $("#loginInfo").html(
+            "<b style='color:red;font-size:15px;'>用户名不能为空！</b>");
+        $("#username").focus();
+        isok = false;
+        return;
+    }
+    if (password == "") {
+        $("#loginInfo").html(
+            "<b style='color:red;font-size:15px;'>密码不能为空！</b>");
+        $("#password").focus();
+        isok = false;
+        return;
+    }
+    if (varcode == "") {
+        $("#loginInfo").html(
+            "<b style='color:red;font-size:15px;'>验证码不能为空！</b>");
+        $("#varcode").focus();
+        isok = false;
+        return;
+    }
+    $.ajax({
+        type: "post",
+        url: "varcodecheck.do",
+        data: {
+            "varcode": varcode
+        },
+        async: false,
+        dataType: 'text',
+        success: function (data) {
+            if (data == "0") {
+                $("#loginInfo")
+                    .html(
+                        "<b style='color:red;font-size:15px;'>验证码错误!</b>");
+                isok = false;
+                return;
+            } else {
+                document.forms[0].action = "adminlogin.do";
+                document.forms[0].submit();
+            }
+        }
+    });
+}
 </script>
 
 </body>

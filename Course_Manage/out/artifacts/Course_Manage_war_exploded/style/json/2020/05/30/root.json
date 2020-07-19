@@ -1,0 +1,186 @@
+{
+   "result":true,
+   "code":0,
+   "messge":"success",
+   "data":
+   {
+      "xAxis":
+      [
+         "200523",
+         "200524",
+         "200525",
+         "200526",
+         "200527",
+         "200528",
+         "200529"
+      ],
+      "series":
+      [
+         {
+            "stack":"总量",
+            "data":
+            [
+               0,
+               0,
+               230,
+               0,
+               0,
+               0,
+               0
+            ],
+            "name":"基于Pytorch热门深度学习框架 从零开发NLP聊天机器人",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         },
+         {
+            "stack":"总量",
+            "data":
+            [
+               300,
+               0,
+               95,
+               0,
+               0,
+               330,
+               100
+            ],
+            "name":"Vue Element+Node.js开发企业通用管理后台系统",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         },
+         {
+            "stack":"总量",
+            "data":
+            [
+               0,
+               0,
+               0,
+               0,
+               200,
+               200,
+               0
+            ],
+            "name":"从0开始 独立完成企业级Java电商网站服务端开发(长期维护)",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         },
+         {
+            "stack":"总量",
+            "data":
+            [
+               0,
+               0,
+               0,
+               260,
+               555,
+               125,
+               445
+            ],
+            "name":"微积分基础",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         },
+         {
+            "stack":"总量",
+            "data":
+            [
+               0,
+               0,
+               430,
+               0,
+               360,
+               215,
+               180
+            ],
+            "name":"模拟电子技术",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         },
+         {
+            "stack":"总量",
+            "data":
+            [
+               0,
+               0,
+               55,
+               75,
+               480,
+               0,
+               300
+            ],
+            "name":"供配电技术",
+            "itemStyle":
+            {
+               "normal":
+               {
+                  "areaStyle":
+                  {
+                     "type":"default"
+                  }
+
+               }
+
+            },
+            "type":"line"
+         }
+
+      ]
+
+   }
+
+}
